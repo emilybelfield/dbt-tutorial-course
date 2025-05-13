@@ -1,0 +1,30 @@
+models:
+  - name: stg_ecommerce__products
+    columns:
+      - name: product_id
+        data_type: int64
+        quote: true
+      - name: cost
+        data_type: float64
+        quote: true
+      - name: category
+        data_type: string
+        quote: true
+      - name: name
+        data_type: string
+        quote: true
+      - name: brand
+        data_type: string
+        quote: true
+      - name: retail_price
+        data_type: float64
+        quote: true
+      - name: department
+        data_type: string
+        quote: true
+      - name: sku
+        data_type: string
+        quote: true
+      - name: distribution_center_id
+        data_type: int64
+        quote: true

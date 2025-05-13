@@ -1,0 +1,42 @@
+models:
+  - name: stg_ecommerce__events
+    columns:
+      - name: event_id
+        data_type: int64
+        quote: true
+      - name: user_id
+        data_type: int64
+        quote: true
+      - name: sequence_number
+        data_type: int64
+        quote: true
+      - name: session_id
+        data_type: string
+        quote: true
+      - name: created_at
+        data_type: timestamp
+        quote: true
+      - name: ip_address
+        data_type: string
+        quote: true
+      - name: city
+        data_type: string
+        quote: true
+      - name: state
+        data_type: string
+        quote: true
+      - name: postal_code
+        data_type: string
+        quote: true
+      - name: browser
+        data_type: string
+        quote: true
+      - name: traffic_source
+        data_type: string
+        quote: true
+      - name: uri
+        data_type: string
+        quote: true
+      - name: event_type
+        data_type: string
+        quote: true

@@ -1,0 +1,39 @@
+models:
+  - name: stg_ecommerce__inventory_items
+    columns:
+      - name: inventory_item_id
+        data_type: int64
+        quote: true
+      - name: product_id
+        data_type: int64
+        quote: true
+      - name: created_at
+        data_type: timestamp
+        quote: true
+      - name: sold_at
+        data_type: timestamp
+        quote: true
+      - name: cost
+        data_type: float64
+        quote: true
+      - name: product_category
+        data_type: string
+        quote: true
+      - name: product_name
+        data_type: string
+        quote: true
+      - name: product_brand
+        data_type: string
+        quote: true
+      - name: product_retail_price
+        data_type: float64
+        quote: true
+      - name: product_department
+        data_type: string
+        quote: true
+      - name: product_sku
+        data_type: string
+        quote: true
+      - name: product_distribution_center_id
+        data_type: int64
+        quote: true
