@@ -7,12 +7,7 @@ WITH source AS (
 SELECT
         id AS product_id,
         cost,
-        category,
-        name,
-        brand,
         retail_price,
-        department,
-        sku,
-        distribution_center_id
+        department
 
 FROM source

@@ -1,7 +1,18 @@
-WITH source AS (
-        SELECT *
+{{
+  config(
+        materialized='incremental',
+        unique_key='event_id',
+        on_schema_change='sync_all_columns',
+        partition_by={
+        "field": "created_at",
+        "data_type": "timestamp",
+        "granularity": "day"
+        }
+)
+}}
 
-        FROM {{ source('thelook_ecommerce', 'events') }}
+WITH source AS (
+        SELECT * FROM {{ source('thelook_ecommerce', 'events') }}
 )
 
 SELECT
@@ -20,3 +31,9 @@ SELECT
         event_type
 
 FROM source
+
+ {% if is_incremental() %}
+
+  WHERE created_at >(SELECT MAX(created_at) FROM {{ this }})
+
+{% endif %}

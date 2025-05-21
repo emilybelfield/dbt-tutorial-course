@@ -31,3 +31,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_lessons:
     +materialized: table
+    +persist_docs:
+      relation: true
+      columns: true
+    # table deletes 168 hours (7 days) after creation
+    +hours_to_expiration: 168
+
+tests:
+  dbt_lessons:
+    +severity: warn
