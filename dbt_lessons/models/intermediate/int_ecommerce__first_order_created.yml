@@ -1,0 +1,9 @@
+models:
+  - name: int_ecommerce__first_order_created
+    columns:
+      - name: user_id
+        data_type: int64
+        quote: true
+      - name: first_order_created_at
+        data_type: timestamp
+        quote: true

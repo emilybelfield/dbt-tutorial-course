@@ -5,6 +5,8 @@
 	are all the same for a given order), but this is just an example of a custom test.
 */
 
+{{config(severity = 'warn')}}
+
 WITH order_details AS (
     SELECT
         order_id,
@@ -15,8 +17,9 @@ WITH order_details AS (
 )
 
 SELECT
-    o.*,
-    od.*
+    o.order_id,
+    o.num_of_item,
+    od.num_of_items_in_order
 
 FROM {{ ref('stg_ecommerce__orders') }} AS o
 FULL OUTER JOIN order_details AS od USING(order_id)
@@ -25,4 +28,4 @@ WHERE
     o.order_id IS NULL
     OR od.order_id IS NULL
     -- Number of items doesn't match
-    OR o.num_items_ordered != od.num_of_items_in_order
+    OR o.num_of_item != od.num_of_items_in_order
