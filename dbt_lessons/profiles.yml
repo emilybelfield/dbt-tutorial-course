@@ -1,7 +1,8 @@
 dbt_lessons:
+  target: dev
   outputs:
     dev:
-      dataset: emily_dbt
+      dataset: emily_dbt_dev
       job_execution_timeout_seconds: 300
       job_retries: 1
       location: US
@@ -10,4 +11,15 @@ dbt_lessons:
       project: training-dsq
       threads: 8
       type: bigquery
-  target: dev
+
+    test:
+      dataset: emily_dbt_test
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: US
+      method: oauth
+      priority: interactive
+      project: training-dsq
+      threads: 8
+      type: bigquery
+  

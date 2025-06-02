@@ -1,3 +1,5 @@
+{{ config(tags=['my_tag']) }}
+
 WITH source AS (
         SELECT *
 

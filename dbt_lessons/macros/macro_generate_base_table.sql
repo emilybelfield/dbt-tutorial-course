@@ -3,7 +3,7 @@
 	https://github.com/dbt-labs/dbt-codegen/blob/0.9.0/macros/generate_base_model.sql
 */
 
-{% macro generate_base_model(source_name, table_name, case_sensitive_cols=False, materialized=None) %}
+{% macro generate_base_table(source_name, table_name, case_sensitive_cols=False, materialized=None) %}
 
 {%- set source_relation = source(source_name, table_name) -%}
 
@@ -16,8 +16,8 @@
 {%- endif %}
 
 WITH source AS (
-	SELECT *
-
+	SELECT 
+	*
 	FROM {% raw %}{{ source({% endraw %}'{{ source_name }}', '{{ table_name }}'{% raw %}) }}{% endraw %}
 )
 

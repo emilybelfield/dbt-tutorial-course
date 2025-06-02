@@ -1,6 +1,6 @@
 WITH source AS (
-        SELECT *
-
+        SELECT 
+        *
         FROM {{ source('thelook_ecommerce', 'orders') }}
 )
 
@@ -13,5 +13,4 @@ SELECT
         shipped_at,
         delivered_at,
         num_of_item
-
 FROM source

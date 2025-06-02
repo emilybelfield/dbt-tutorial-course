@@ -1,0 +1,30 @@
+models:
+  - name: raw__orders
+    columns:
+      - name: order_id
+        data_type: int64
+        quote: true
+      - name: user_id
+        data_type: int64
+        quote: true
+      - name: status
+        data_type: string
+        quote: true
+      - name: gender
+        data_type: string
+        quote: true
+      - name: created_at
+        data_type: timestamp
+        quote: true
+      - name: returned_at
+        data_type: timestamp
+        quote: true
+      - name: shipped_at
+        data_type: timestamp
+        quote: true
+      - name: delivered_at
+        data_type: timestamp
+        quote: true
+      - name: num_of_item
+        data_type: int64
+        quote: true
