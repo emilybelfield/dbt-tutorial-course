@@ -1,0 +1,13 @@
+dbt_example_project:
+  target: dev
+  outputs:
+    dev:
+      dataset: emily_dbt_example
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: US
+      method: oauth
+      priority: interactive
+      project: training-dsq
+      threads: 8
+      type: bigquery
